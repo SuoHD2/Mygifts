@@ -1,0 +1,68 @@
+body {
+      margin: 0;
+      padding: 0;
+      background: #0b1d39;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    #box-container {
+      position: relative;
+      cursor: pointer;
+    }
+
+    #gift-box {
+      width: 200px;
+      height: 200px;
+      background: #d62828;
+      border-radius: 10px;
+      animation: wiggle 1.2s infinite ease-in-out;
+    }
+
+    #lid {
+      width: 220px;
+      height: 40px;
+      background: #f77f00;
+      border-radius: 10px;
+      position: absolute;
+      top: -40px;
+      left: -10px;
+    }
+
+    @keyframes wiggle {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(1.5deg); }
+      50% { transform: rotate(0deg); }
+      75% { transform: rotate(-1.5deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    #message {
+      opacity: 0;
+      font-size: 3rem;
+      margin-top: 20px;
+      transition: opacity 1.2s ease;
+      color: gold;
+    }
+
+    .confetti {
+      position: absolute;
+      width: 8px;
+      height: 20px;
+      background: hsl(calc(360 * var(--i)), 80%, 60%);
+      top: 0;
+      left: 50%;
+      opacity: 0;
+      animation: fall 1.5s linear forwards;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(600px) rotate(300deg); opacity: 0; }
+    }
